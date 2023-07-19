@@ -6,12 +6,26 @@ const wordCounter = (value) => {
 
   if (value) {
     // COMPLETE THE LOGIC 
-    wordCount.innerHTML = `Word Count: 0`; 
+    wordCount.innerHTML = `Word count: ${value.split(" ").length}`; 
   } else {
     // if the value is empty, set the error message value to "Please input text"
-    error.innerHTML = ""; // UPDATE THIS
+    error.innerHTML = "Please input text"; // UPDATE THIS
   }
 }
+// OPTIONAL CHALLENGE
+const toggleMode = (btnText) => {
+  // complete the function
+  if (btnText.includes('Dark Mode')){
+    toggleButton.innerHTML = 'Light Mode'
+    document.body.style.background = 'black'
+    document.body.style.color ='white'
+  } else {
+    toggleButton.innerHTML = 'Dark Mode'
+    document.body.style.background ='white'
+    document.body.style.color = 'black'
+  }
+}
+
 // ************************************************ //
 // **** DO NOT MODIFY THE CODE BELOW THIS LINE **** //
 // ************************************************ //
@@ -33,7 +47,7 @@ form.addEventListener("submit", (event) => {
 });
 
 form.addEventListener("reset", () => {
-  error.innerHTML = ""; // on reset, clear the innderHTML
+  error.innerHTML = ""; // on reset, clear the innerHTML
   wordCount.innerHTML = ""; // on reset, clear the innderHTML
 });
 
